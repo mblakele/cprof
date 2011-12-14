@@ -34,9 +34,17 @@ After that, you can simply replace `xdmp:eval`, `xdmp:invoke`, etc
 with `cprof:eval`, `cprof:invoke`, etc.
 The function signatures are identical.
 At the end of the query, call `cprof:report`
-and do whatever you like with the sequence of prof:report elements.
+and do whatever you like with the sequence of `prof:report` elements.
 If you get back the empty sequence, then profiling was not enabled.
-The functions are lightweight,
+
+Note that `cprof:report` takes an optional boolean argument.
+If set, the return value will be a single `prof:report` element
+with the main request's `prof:metadata` element and with
+all of the histograms merged into one `prof:histogram` element.
+This may be a little confusing, since the sum of
+all the histogram expressions may exceed headline elapsed time.
+
+The functions in this library are lightweight,
 so you do not need to disable them for production.
 
 The cprof test cases use [XQUT](https://github.com/mblakele/xqut).
