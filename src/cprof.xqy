@@ -47,6 +47,15 @@ as element(prof:report)
     $parent/@*,
     $parent/prof:metadata,
     element prof:histogram {
+      (: TODO consider stripping out
+       : $parent/prof:histogram/prof:expression[
+       :   matches(
+       :     prof:expr-source,
+       :     '^prof:(eval|invoke|value|xslt-eval|xslt-invoke)\(') ]
+       : Doing so would avoid showing the same elapsed time twice,
+       : but might make it harder to track down which eval is which.
+       : All nested expressions would tend to look like '.main:  1:  0' in cq.
+       :)
       $parent/prof:histogram/node(),
       $STACK/prof:histogram/node()
     }
