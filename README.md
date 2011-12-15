@@ -24,9 +24,14 @@ display it, log it, email it, etc.
 This XQuery library makes that pattern easy. Here is an example:
 
     import module namespace cprof="com.blakeley.cprof" at "/path/to/cprof.xqy";
+
+    (: logic to enable profiling :)
     if (xs:boolean(xdmp:get-request-field('profile', '0'))) then cprof:enable()
     else (),
+
     cprof:value('xdmp:sleep(5)'),
+
+    (: send the report XML wherever you like :)
     cprof:report()
 
 The only necessary logic is whether or not to call `cprof:enable`.
