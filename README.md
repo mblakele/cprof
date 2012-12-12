@@ -7,7 +7,7 @@ Conditional Profiling
 You have written an application or a service using MarkLogic Server
 and XQuery or XSLT. Your application uses some combination of
 HTTP, `xdmp:eval`, `xdmp:invoke`, `xdmp:value`,
-`xdmp:xslt-eval`, and `xdmp:xslt-eval`.
+`xdmp:xslt-eval`, and `xdmp:xslt-invoke`.
 You have discovered a slow request, and you want to profile it.
 But adding profiler support to an HTTP request can be tricky.
 Changing metaprogramming calls like `xdmp:invoke` to `prof:invoke`
@@ -58,7 +58,7 @@ Patches are welcome.
 
 License
 ---
-Copyright (c) 2011 Michael Blakeley. All Rights Reserved.
+Copyright (c) 2011-2012 Michael Blakeley. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
