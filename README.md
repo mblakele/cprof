@@ -49,6 +49,12 @@ all of the histograms merged into one `prof:histogram` element.
 This may be a little confusing, since the sum of
 all the histogram expressions may exceed headline elapsed time.
 
+You may you have trouble invoking a module using a relative path,
+because cprof will call `xdmp:invoke` from its location
+instead of the caller's location. To work around this,
+use an absolute path. This also applies to
+`xdmp:spawn`, `xdmp:xslt-invoke`, etc.
+
 The functions in this library are lightweight,
 so you do not need to disable them for production.
 
@@ -58,7 +64,7 @@ Patches are welcome.
 
 License
 ---
-Copyright (c) 2011-2012 Michael Blakeley. All Rights Reserved.
+Copyright (c) 2011-2014 Michael Blakeley. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
